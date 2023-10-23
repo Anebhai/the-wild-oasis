@@ -13,8 +13,15 @@ const StyledAppLayout = styled.div`
 const Main = styled.main`
   background-color: var(--color-grey-50);
   padding: 4rem 4.8rem 6.4rem;
+  overflow: scroll;
 `;
-
+const Container = styled.div`
+  max-width: 120rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+`;
 function AppLayout() {
   return (
     <StyledAppLayout>
@@ -22,7 +29,9 @@ function AppLayout() {
       <Sidebar />
       <Main>
         {/* Main is for styling and semantic so that the components have react fragments at top so we have done like this so that each component of outlet get main as the html at top level */}
-        <Outlet />
+        <Container>
+          <Outlet />
+        </Container>
       </Main>
     </StyledAppLayout>
   );
